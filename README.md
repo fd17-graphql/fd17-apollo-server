@@ -41,8 +41,7 @@ https://github.com/boo1ean/casual
 ### _mongoshell on mLab_
 #### _mongoshell cheat sheet: https://docs.mongodb.com/manual/reference/mongo-shell/_
 ```
-> mongo
-_rs-ds157521:PRIMARY_> use fd2017mongodb
+> mongo ds157521.mlab.com:57521/fd2017mongodb -u admin -p fd2017
 _rs-ds157521:PRIMARY_> show collections
 _rs-ds157521:PRIMARY_> db.partner.find()
 _rs-ds157521:PRIMARY_> db.contract.find()
