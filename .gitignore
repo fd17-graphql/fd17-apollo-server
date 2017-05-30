@@ -16,4 +16,5 @@
 .strong-pm
 npm-debug.log
 node_modules
+.c9
 

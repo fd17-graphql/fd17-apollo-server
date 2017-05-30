@@ -21,14 +21,14 @@ http://docs.sequelizejs.com/manual/tutorial/querying.html#basics
 ### _Associations_
 http://docs.sequelizejs.com/manual/tutorial/associations.html#belongsto
 
-## Casual Fake Data
+## Casual fakedata
 ### _casual generator_
 https://github.com/boo1ean/casual
 
 
 
 ## MongoDB
-### _mongoimport auf mLab_
+### _mongoimport on mLab_
 ```
 > cd db/insert-scripts
 > mongoimport --host ds157521.mlab.com:57521 --db fd2017mongodb -u admin -p fd2017 --collection partner --file fd17-partner.json
@@ -37,7 +37,7 @@ https://github.com/boo1ean/casual
 ```
 
 
-### _mongoshell auf mLab_
+### _mongoshell on mLab_
 #### _mongoshell cheat sheet: https://docs.mongodb.com/manual/reference/mongo-shell/_
 ```
 > mongo
