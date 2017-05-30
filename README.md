@@ -7,9 +7,8 @@
 ```
 
 ### _run GraphiQL (on Cloud9)_
-```
 https://fd17-graphql-mikhailbro.c9users.io/graphql
-```
+
 
 ### GraphQL schema language cheat sheet
 https://wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6
