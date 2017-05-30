@@ -32,7 +32,7 @@ https://github.com/boo1ean/casual
 ### _start MongoDB_
 ```
 > cd fd17-graphql-server
-> ./mongod
+> ./mongod 
 ```
 
 
