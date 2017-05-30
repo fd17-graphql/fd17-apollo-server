@@ -1,0 +1,50 @@
+{ "police-number": 1, "product": "All-in-one", "risk-objects": [{ "identifier": "car" }, { "identifier": "household" }, { "identifier": "jewelry" }, { "identifier": "motorcycle" }], "insurance-sum": 712060 } 
+{ "police-number": 2, "product": "All-in-one", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "car" }, { "identifier": "household" }], "insurance-sum": 139838 } 
+{ "police-number": 3, "product": "Smarthome", "risk-objects": [{ "identifier": "household" }], "insurance-sum": 675854 } 
+{ "police-number": 4, "product": "Smarthome", "risk-objects": [{ "identifier": "car" }], "insurance-sum": 692266 } 
+{ "police-number": 5, "product": "All-in-one", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "bicycle" }, { "identifier": "household" }, { "identifier": "motorcycle" }, { "identifier": "car" }], "insurance-sum": 895570 } 
+{ "police-number": 6, "product": "All-in-one", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "car" }, { "identifier": "household" }, { "identifier": "bicycle" }], "insurance-sum": 881430 } 
+{ "police-number": 7, "product": "Auto Moto Plus", "risk-objects": [{ "identifier": "car" }, { "identifier": "motorcycle" }, { "identifier": "household" }], "insurance-sum": 139551 } 
+{ "police-number": 8, "product": "Kunst", "risk-objects": [{ "identifier": "car" }, { "identifier": "apartment" }, { "identifier": "art" }], "insurance-sum": 620226 } 
+{ "police-number": 9, "product": "All-in-one", "risk-objects": [{ "identifier": "motorcycle" }, { "identifier": "household" }, { "identifier": "car" }, { "identifier": "jewelry" }], "insurance-sum": 32301 } 
+{ "police-number": 10, "product": "Goldkueste", "risk-objects": [{ "identifier": "household" }, { "identifier": "jewelry" }], "insurance-sum": 425856 } 
+{ "police-number": 11, "product": "Goldkueste", "risk-objects": [{ "identifier": "motorcycle" }, { "identifier": "household" }, { "identifier": "jewelry" }], "insurance-sum": 56731 } 
+{ "police-number": 12, "product": "All-in-one", "risk-objects": [{ "identifier": "bicycle" }, { "identifier": "apartment" }, { "identifier": "motorcycle" }], "insurance-sum": 891778 } 
+{ "police-number": 13, "product": "Kunst", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "car" }, { "identifier": "art" }], "insurance-sum": 124430 } 
+{ "police-number": 14, "product": "Smarthome", "risk-objects": [{ "identifier": "household" }], "insurance-sum": 601259 } 
+{ "police-number": 15, "product": "Auto Moto Plus", "risk-objects": [{ "identifier": "car" }, { "identifier": "motorcycle" }, { "identifier": "jewelry" }], "insurance-sum": 312013 } 
+{ "police-number": 16, "product": "All-in-one", "risk-objects": [{ "identifier": "car" }, { "identifier": "household" }, { "identifier": "jewelry" }], "insurance-sum": 487714 } 
+{ "police-number": 17, "product": "All-in-one", "risk-objects": [{ "identifier": "car" }, { "identifier": "jewelry" }], "insurance-sum": 340962 } 
+{ "police-number": 18, "product": "Smarthome", "risk-objects": [{ "identifier": "household" }], "insurance-sum": 519456 } 
+{ "police-number": 19, "product": "All-in-one", "risk-objects": [{ "identifier": "car" }, { "identifier": "motorcycle" }, { "identifier": "jewelry" }, { "identifier": "household" }], "insurance-sum": 934634 } 
+{ "police-number": 20, "product": "Kunst", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "motorcycle" }, { "identifier": "art" }], "insurance-sum": 420965 } 
+{ "police-number": 21, "product": "All-in-one", "risk-objects": [{ "identifier": "motorcycle" }, { "identifier": "household" }, { "identifier": "car" }], "insurance-sum": 586075 } 
+{ "police-number": 22, "product": "Goldkueste", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "car" }, { "identifier": "motorcycle" }], "insurance-sum": 258292 } 
+{ "police-number": 23, "product": "Goldkueste", "risk-objects": [{ "identifier": "art" }, { "identifier": "motorcycle" }], "insurance-sum": 582213 } 
+{ "police-number": 24, "product": "All-in-one", "risk-objects": [{ "identifier": "motorcycle" }, { "identifier": "jewelry" }, { "identifier": "household" }], "insurance-sum": 649220 } 
+{ "police-number": 25, "product": "Auto Moto Plus", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "car" }, { "identifier": "motorcycle" }], "insurance-sum": 998161 } 
+{ "police-number": 26, "product": "All-in-one", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "household" }, { "identifier": "car" }], "insurance-sum": 832534 } 
+{ "police-number": 27, "product": "All-in-one", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "art" }, { "identifier": "car" }, { "identifier": "household" }], "insurance-sum": 673649 } 
+{ "police-number": 28, "product": "Goldkueste", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "car" }], "insurance-sum": 905594 } 
+{ "police-number": 29, "product": "All-in-one", "risk-objects": [{ "identifier": "car" }, { "identifier": "jewelry" }, { "identifier": "apartment" }], "insurance-sum": 988481 } 
+{ "police-number": 30, "product": "All-in-one", "risk-objects": [{ "identifier": "household" }, { "identifier": "motorcycle" }, { "identifier": "apartment" }, { "identifier": "jewelry" }, { "identifier": "car" }], "insurance-sum": 137393 }
+{ "police-number": 31, "product": "Kunst", "risk-objects": [{ "identifier": "jewelry" }], "insurance-sum": 581034 } 
+{ "police-number": 32, "product": "Smarthome", "risk-objects": [{ "identifier": "apartment" }], "insurance-sum": 349009 } 
+{ "police-number": 33, "product": "All-in-one", "risk-objects": [{ "identifier": "art" }, { "identifier": "household" }], "insurance-sum": 410003 } 
+{ "police-number": 34, "product": "Smarthome", "risk-objects": [{ "identifier": "household" }], "insurance-sum": 382675 } 
+{ "police-number": 35, "product": "Auto Moto Plus", "risk-objects": [{ "identifier": "motorcycle" }, { "identifier": "car" }, { "identifier": "bicycle" }], "insurance-sum": 37787 } 
+{ "police-number": 36, "product": "All-in-one", "risk-objects": [{ "identifier": "household" }, { "identifier": "apartment" }, { "identifier": "bicycle" }], "insurance-sum": 405321 } 
+{ "police-number": 37, "product": "Auto Moto Plus", "risk-objects": [{ "identifier": "car" }, { "identifier": "motorcycle" }], "insurance-sum": 167580 } 
+{ "police-number": 38, "product": "Goldkueste", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "car" }, { "identifier": "art" }], "insurance-sum": 63034 } 
+{ "police-number": 39, "product": "Smarthome", "risk-objects": [{ "identifier": "household" }], "insurance-sum": 500636 } 
+{ "police-number": 40, "product": "Auto", "risk-objects": [{ "identifier": "car" }], "insurance-sum": 795802 } 
+{ "police-number": 41, "product": "Auto Moto Plus", "risk-objects": [{ "identifier": "car" }, { "identifier": "jewelry" }], "insurance-sum": 708085 } 
+{ "police-number": 42, "product": "Goldkueste", "risk-objects": [{ "identifier": "motorcycle" }, { "identifier": "jewelry" }, { "identifier": "car" }], "insurance-sum": 195538 } 
+{ "police-number": 43, "product": "Auto", "risk-objects": [{ "identifier": "car" }], "insurance-sum": 324209 } 
+{ "police-number": 44, "product": "Goldkueste", "risk-objects": [{ "identifier": "jewelry" }], "insurance-sum": 638937 } 
+{ "police-number": 45, "product": "Kunst", "risk-objects": [{ "identifier": "art" }, { "identifier": "jewelry" }], "insurance-sum": 98400 } 
+{ "police-number": 46, "product": "All-in-one", "risk-objects": [{ "identifier": "art" }, { "identifier": "jewelry" }, { "identifier": "car" }, { "identifier": "household" }], "insurance-sum": 229395 } 
+{ "police-number": 47, "product": "All-in-one", "risk-objects": [{ "identifier": "art" }, { "identifier": "jewelry" }, { "identifier": "household" }, { "identifier": "apartment" }], "insurance-sum": 850718 } 
+{ "police-number": 48, "product": "Auto Moto Plus", "risk-objects": [{ "identifier": "motorcycle" }], "insurance-sum": 73710 } 
+{ "police-number": 49, "product": "All-in-one", "risk-objects": [{ "identifier": "jewelry" }], "insurance-sum": 670173 } 
+{ "police-number": 50, "product": "All-in-one", "risk-objects": [{ "identifier": "jewelry" }, { "identifier": "car" }, { "identifier": "household" }], "insurance-sum": 195558 }
