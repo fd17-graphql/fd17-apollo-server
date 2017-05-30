@@ -6,8 +6,8 @@
 > npm start
 ```
 
-### _run GraphiQL (on Cloud9)_
-https://fd17-graphql-mikhailbro.c9users.io/graphql
+### _run GraphiQL on Cloud9_
+https://fd17-apollo-server-mikhailbro.c9users.io/graphql
 
 
 ### GraphQL schema language cheat sheet
