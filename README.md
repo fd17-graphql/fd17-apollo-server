@@ -9,8 +9,12 @@
 ### _run GraphiQL on Cloud9_
 https://fd17-apollo-server-mikhailbro.c9users.io/graphql
 
+### _run GraphiQL on Heroku
+https://fd17-apollo-server.herokuapp.com/graphql
 
-### GraphQL schema language cheat sheet
+
+
+#### GraphQL schema language cheat sheet
 https://wehavefaces.net/graphql-shorthand-notation-cheatsheet-17cd715861b6
 
 
