@@ -9,7 +9,7 @@
 ### _run GraphiQL on Cloud9_
 https://fd17-apollo-server-mikhailbro.c9users.io/graphql
 
-### _run GraphiQL on Heroku
+### _run GraphiQL on Heroku_
 https://fd17-apollo-server.herokuapp.com/graphql
 
 
