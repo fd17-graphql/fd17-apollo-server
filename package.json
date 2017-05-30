@@ -1,6 +1,6 @@
 {
   "name": "fd17-apollo-server.git",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "GraphQL server with Apollo graphql-tools",
   "scripts": {
     "start": "nodemon ./server.js --exec babel-node",
