@@ -1,5 +1,5 @@
 ## GraphQL Server with Apollo and NodeJS 
-tutorial on https://dev-blog.apollodata.com/tutorial-building-a-graphql-server-cddaa023c035
+#### tutorial on https://dev-blog.apollodata.com/tutorial-building-a-graphql-server-cddaa023c035
 
 ### _start Apollo server_
 ```
@@ -28,7 +28,7 @@ https://github.com/boo1ean/casual
 
 
 ## MongoDB
-### _mongoimport auf heroku_
+### _mongoimport auf mLab_
 ```
 > cd db/insert-scripts
 > mongoimport --host ds157521.mlab.com:57521 --db fd2017mongodb -u admin -p fd2017 --collection partner --file fd17-partner.json
@@ -37,7 +37,8 @@ https://github.com/boo1ean/casual
 ```
 
 
-### _mongoshell auf heroku (s. cheat sheet: https://docs.mongodb.com/manual/reference/mongo-shell/)_
+### _mongoshell auf mLab_
+#### _mongoshell cheat sheet: https://docs.mongodb.com/manual/reference/mongo-shell/_
 ```
 > mongo
 _rs-ds157521:PRIMARY_> use fd2017mongodb
