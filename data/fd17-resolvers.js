@@ -35,8 +35,7 @@ const resolvers = {
           "policeNumber": contract['police-number'],
           "product": contract.product,
           "riskObjects": contract['risk-objects'],
-          "insuranceSum": contract['insurance-sum'],
-          "fk_partnerNumber": contract.fk_partnerNumber
+          "insuranceSum": contract['insurance-sum']
         }))
       });
     }
@@ -46,11 +45,9 @@ const resolvers = {
     riskObjects(contract) {
       return contract.riskObjects;
     }
-  },
-
-  RiskObject: {
-
   }
+
+
 };
 
 export default resolvers;
