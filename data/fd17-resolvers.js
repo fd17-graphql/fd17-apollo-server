@@ -51,7 +51,7 @@ const resolvers = {
       return contract.riskObjects;
     },
     claims(contract) {
-      var param = contract.policeNumber;
+      var param = '"fk_contractNumber":'+ contract.policeNumber;
       console.log(param)
       return ClaimsModelRest.findByParam(param).map(claims => ({
           "claimsNumber": claims.claimsNumber,
@@ -63,7 +63,16 @@ const resolvers = {
           "fk_partnerNumberInsuree": claims['fk_partnerNumberInsuree'],
           "fk_partnerNumberCauser": claims['fk_partnerNumberCauser']
       }))
-    }
+    },
+    partner(contract) {
+      return PartnerModelMongoose.find({ 'partnerNumber': contract.fk_partnerNumber }).exec().then((partner) => {
+        return partner.map(partner => ({
+          "partnerNumber": partner.partnerNumber,
+          "firstname": partner.firstname,
+          "lastname": partner.lastname
+        }))
+      });
+    },
   }
 
 };

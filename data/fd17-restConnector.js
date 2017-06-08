@@ -14,7 +14,7 @@ const ClaimsModelRest = {
   },
   
   findByParam: function(arg) {
-    var uri = endpoint + '/claims?' + apiKey + '&q={"fk_contractNumber":'+ arg + '}';
+    var uri = endpoint + '/claims?' + apiKey + '&q={' + arg + '}';
     console.log(uri);
     return rp(uri)
       .then((res) => JSON.parse(res))

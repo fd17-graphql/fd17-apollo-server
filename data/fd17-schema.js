@@ -18,6 +18,7 @@ type Contract {
   insuranceSum: Int!
   fk_partnerNumber: Int
   claims: [Claims]
+  partner: [Partner]
 }
 # RiskObjects
 type RiskObject {
