@@ -8,6 +8,8 @@ type Partner {
   birthday: String!
   sex: String!
   contracts: [Contract]
+  myClaims: [Claims]
+  claimsbyMe: [Claims]
 }
 
 # Insurance contract
@@ -18,7 +20,7 @@ type Contract {
   insuranceSum: Int!
   fk_partnerNumber: Int
   claims: [Claims]
-  partner: [Partner]
+  partner: Partner
 }
 # RiskObjects
 type RiskObject {

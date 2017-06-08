@@ -35,7 +35,7 @@ const resolvers = {
       });
     }
   },
-//blah
+
   Partner: {
     contracts(partner) {
       return ContractModelMongoose.find({ 'fk_partnerNumber': partner.partnerNumber }).exec().then((contract) => {
@@ -46,6 +46,34 @@ const resolvers = {
           "insuranceSum": contract['insurance-sum']
         }))
       });
+    },
+    myClaims(partner) {
+      var param = '"fk_partnerNumberInsuree":'+ partner.partnerNumber;
+      console.log(param)
+      return ClaimsModelRest.findByParam(param).map(claims => ({
+          "claimsNumber": claims.claimsNumber,
+          "description": claims.description,
+          "claimsSum": claims.claimsSum,
+          "claimsDate": claims.claimsDate,
+          "state": claims.state,
+          "fk_contractNumber": claims['fk_contractNumber'],
+          "fk_partnerNumberInsuree": claims['fk_partnerNumberInsuree'],
+          "fk_partnerNumberCauser": claims['fk_partnerNumberCauser']
+      }))
+    },
+    claimsbyMe(partner) {
+      var param = '"fk_partnerNumberCauser":'+ partner.partnerNumber;
+      console.log(param)
+      return ClaimsModelRest.findByParam(param).map(claims => ({
+          "claimsNumber": claims.claimsNumber,
+          "description": claims.description,
+          "claimsSum": claims.claimsSum,
+          "claimsDate": claims.claimsDate,
+          "state": claims.state,
+          "fk_contractNumber": claims['fk_contractNumber'],
+          "fk_partnerNumberInsuree": claims['fk_partnerNumberInsuree'],
+          "fk_partnerNumberCauser": claims['fk_partnerNumberCauser']
+      }))
     }
   },
 
@@ -68,16 +96,19 @@ const resolvers = {
       }))
     },
     partner(contract) {
-      return PartnerModelMongoose.find({ 'partnerNumber': contract.fk_partnerNumber }).exec().then((partner) => {
+      return PartnerModelMongoose.findOne({ 'partnerNumber': contract.fk_partnerNumber }).exec().then((partner) => {
+        console.log(partner)
         return partner.map(partner => ({
           "partnerNumber": partner.partnerNumber,
           "firstname": partner.firstname,
-          "lastname": partner.lastname
+          "lastname": partner.lastname,
+          "birthday": partner.birthday,
+          "sex": partner.sex
         }))
       });
     },
   }
-
 };
+
 
 export default resolvers;

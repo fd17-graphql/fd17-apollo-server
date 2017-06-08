@@ -18,8 +18,7 @@ const ContractSchemaMongoose = Mongoose.Schema({
   'insurance-sum': Number,
   'fk_partnerNumber' : Number
 }, {collection: 'contracts'});
-
-
 const ContractModelMongoose = Mongoose.model('Contract', ContractSchemaMongoose);
+
 
 export {PartnerModelMongoose, ContractModelMongoose};
