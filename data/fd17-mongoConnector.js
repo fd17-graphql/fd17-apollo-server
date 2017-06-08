@@ -17,6 +17,8 @@ const ContractSchemaMongoose = Mongoose.Schema({
   'risk-objects': [ { identifier: String} ],
   'insurance-sum': Number
 }, {collection: 'contract'});
+
+
 const ContractModelMongoose = Mongoose.model('contract', ContractSchemaMongoose);
 
 export {PartnerModelMongoose, ContractModelMongoose};

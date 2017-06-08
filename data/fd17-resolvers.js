@@ -33,7 +33,7 @@ const resolvers = {
 
   Contract: {
     riskObjects(contract) {
-      return contract.getRiskObjects();
+      return contract.riskObjects;
     }
   },
 
