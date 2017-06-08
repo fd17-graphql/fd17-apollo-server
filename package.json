@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "GraphQL server with Apollo graphql-tools",
   "scripts": {
-    "start": "nodemon ./server.js --exec babel-node",
+    "start": "babel-node server.js --presets es2015,stage-2",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ."
   },
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/apollostack/apollo-starter-kit#readme",
   "dependencies": {
+    "babel-preset-stage-2": "^6.24.1",
     "express": "4.13.4",
     "graphql-tools": "^0.4.2",
     "isomorphic-fetch": "^2.2.1"
