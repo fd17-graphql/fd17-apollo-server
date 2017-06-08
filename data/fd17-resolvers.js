@@ -32,7 +32,7 @@ const resolvers = {
       });
     }
   },
-
+//blah
   Partner: {
     contracts(partner) {
       return ContractModelMongoose.find({ 'fk_partnerNumber': partner.partnerNumber }).exec().then((contract) => {
