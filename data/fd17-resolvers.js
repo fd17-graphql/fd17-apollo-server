@@ -1,5 +1,5 @@
 import { PartnerModelMongoose } from './fd17-mongoConnector';
-import { ContractConnector } from './fd17-mongoConnector';
+import { ContractModelMongoose } from './fd17-mongoConnector';
 
 import 'isomorphic-fetch';
 
@@ -11,17 +11,19 @@ const apiKey='apiKey=8CQLKPe7aPqcyHS8d0kgn3IMTz2saWSW'
 const resolvers = {
   Query: {
     partners(_, args) {
-      /*var res = PartnerModelMongoose.find(function(err, res){
-        console.log(res)
-        return res;
-      });*/
-      PartnerModelMongoose.find().exec().then(function(res) {
-        console.log(res[0])
-        return res;
-      })
+      return PartnerModelMongoose.find().exec().then((partner) => {
+        return (partner)
+      });
     },
     contracts(_, args) {
-      return ContractConnector.findAll({ where: args, order: [  ['riskObjects', 'DESC'] ] });
+      return ContractModelMongoose.find().exec().then((contract) => {
+        return contract.map(contract => ({
+          "policeNumber": contract['police-number'],
+          "product": contract.product,
+          "riskObjects": contract['risk-objects'],
+          "insuranceSum": contract['insurance-sum']
+        }))
+      });
     }
   },
 
@@ -30,8 +32,14 @@ const resolvers = {
   },
 
   Contract: {
-
+    riskObjects(contract) {
+      return contract.getRiskObjects();
+    }
   },
+
+  RiskObject: {
+
+  }
 };
 
 export default resolvers;

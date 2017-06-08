@@ -1,7 +1,7 @@
 const typeDefinitions = `
 # Insurance partner
 type Partner {
-  partnerNumber: String!
+  partnerNumber: Int
   firstname: String!
   lastname: String!
   birthday: String!
@@ -12,9 +12,14 @@ type Partner {
 type Contract {
   policeNumber: String!
   product: String!
-  riskObjects: String!
+  riskObjects: [RiskObject]
   insuranceSum: Int!
 }
+# RiskObjects
+type RiskObject {
+    identifier: String!
+}
+
 
 # Insurance claims
 type Claims {
@@ -27,8 +32,8 @@ type Claims {
 
 
 type Query {
-  partners(limit: Int,, partnerNumber: String, firstname: String, lastname: String, birthday: String, sex: String): [Partner]
-  contracts(limit: Int, policeNumber: String, product: String, riskObjects: String, insuranceSum: Int): [Contract]
+  partners(limit: Int,, partnerNumber: Int, firstname: String, lastname: String, birthday: String, sex: String): [Partner]
+  contracts(limit: Int, policeNumber: String, product: String, insuranceSum: Int): [Contract]
 }
 
 
