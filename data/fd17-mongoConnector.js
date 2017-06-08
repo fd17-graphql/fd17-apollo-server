@@ -9,16 +9,17 @@ const PartnerSchemaMongoose = Mongoose.Schema({
   sex: String,
   birthday: String
 }, {collection: 'partners'});
-const PartnerModelMongoose = Mongoose.model('partner', PartnerSchemaMongoose);
+const PartnerModelMongoose = Mongoose.model('Partner', PartnerSchemaMongoose);
 
 const ContractSchemaMongoose = Mongoose.Schema({
   'police-number': Number,
   'product': String,
   'risk-objects': [ { identifier: String} ],
-  'insurance-sum': Number
-}, {collection: 'contract'});
+  'insurance-sum': Number,
+  'fk_partnerNumber' : Number
+}, {collection: 'contracts'});
 
 
-const ContractModelMongoose = Mongoose.model('contract', ContractSchemaMongoose);
+const ContractModelMongoose = Mongoose.model('Contract', ContractSchemaMongoose);
 
 export {PartnerModelMongoose, ContractModelMongoose};

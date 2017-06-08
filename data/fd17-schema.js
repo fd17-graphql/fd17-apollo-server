@@ -1,4 +1,5 @@
 const typeDefinitions = `
+
 # Insurance partner
 type Partner {
   partnerNumber: Int
@@ -6,6 +7,7 @@ type Partner {
   lastname: String!
   birthday: String!
   sex: String!
+  contracts: [Contract]
 }
 
 # Insurance contract
@@ -14,6 +16,7 @@ type Contract {
   product: String!
   riskObjects: [RiskObject]
   insuranceSum: Int!
+  fk_partnerNumber: Int
 }
 # RiskObjects
 type RiskObject {
