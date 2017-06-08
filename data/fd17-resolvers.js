@@ -1,6 +1,6 @@
 import { PartnerModelMongoose } from './fd17-mongoConnector';
 import { ContractModelMongoose } from './fd17-mongoConnector';
-
+import { ClaimsModelRest } from './fd17-restConnector';
 import 'isomorphic-fetch';
 
 const toJSON = res => res.json()
@@ -23,6 +23,18 @@ const resolvers = {
           "riskObjects": contract['risk-objects'],
           "insuranceSum": contract['insurance-sum'],
           "fk_partnerNumber": contract.fk_partnerNumber
+        }))
+      });
+    },
+    claims(_, args) {
+      return ClaimsModelRest.findAll().then((claims) => {
+        console.log(claims);
+        return claims.map(claim => ({
+          claimsNumber: claim.claimsNumber,
+          description: "blubli",
+          claimsSum: 44556,
+          claimsDate: 'now',
+          state: 'closed'
         }))
       });
     }
