@@ -43,7 +43,8 @@ const resolvers = {
           "policeNumber": contract['police-number'],
           "product": contract.product,
           "riskObjects": contract['risk-objects'],
-          "insuranceSum": contract['insurance-sum']
+          "insuranceSum": contract['insurance-sum'],
+          "fk_partnerNumber": contract.fk_partnerNumber
         }))
       });
     },
