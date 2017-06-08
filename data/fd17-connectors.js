@@ -2,6 +2,14 @@ import Sequelize from 'sequelize';
 import casual from 'casual';
 import _ from 'lodash';
 
+import Mongoose from 'mongoose';
+
+const mongo = Mongoose.connect('mongodb://admin:fd2017@ds157521.mlab.com:57521/fd2017mongodb');
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+});
+
 
 // ** Sequelize with Casual **
 const db = new Sequelize('blog', null, null, {
@@ -78,6 +86,9 @@ db.sync({ force: true }).then(() => {
 
   });
 });
+
+
+console.log("********" + Mongoose.connection.readyState);
 
 const Partner = db.models.partner;
 const Contract = db.models.contract;
