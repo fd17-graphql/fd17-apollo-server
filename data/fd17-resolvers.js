@@ -27,7 +27,10 @@ const resolvers = {
           description: claims.description,
           claimsSum: claims.claimsSum,
           claimsDate: claims.claimsDate,
-          state: claims.state
+          state: claims.state,
+          "fk_contractNumber": claims['fk_contractNumber'],
+          "fk_partnerNumberInsuree": claims['fk_partnerNumberInsuree'],
+          "fk_partnerNumberCauser": claims['fk_partnerNumberCauser']
         }))
       });
     }
