@@ -49,9 +49,22 @@ const resolvers = {
   Contract: {
     riskObjects(contract) {
       return contract.riskObjects;
+    },
+    claims(contract) {
+      var param = contract.policeNumber;
+      console.log(param)
+      return ClaimsModelRest.findByParam(param).map(claims => ({
+          "claimsNumber": claims.claimsNumber,
+          "description": claims.description,
+          "claimsSum": claims.claimsSum,
+          "claimsDate": claims.claimsDate,
+          "state": claims.state,
+          "fk_contractNumber": claims['fk_contractNumber'],
+          "fk_partnerNumberInsuree": claims['fk_partnerNumberInsuree'],
+          "fk_partnerNumberCauser": claims['fk_partnerNumberCauser']
+      }))
     }
   }
-
 
 };
 
