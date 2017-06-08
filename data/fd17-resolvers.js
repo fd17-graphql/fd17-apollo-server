@@ -1,13 +1,21 @@
-import { Partner } from './fd17-connectors';
+import { PartnerConnector } from './fd17-connectors';
 import { Contract } from './fd17-connectors';
 import { Claims } from './fd17-connectors';
 
 import Sequelize from 'sequelize';
+import 'isomorphic-fetch';
+
+const toJSON= res => res.json()
+
+const endpoint='https://api.mlab.com/api/1/databases/fd2017mongodb/collections/'
+const apiKey='apiKey=8CQLKPe7aPqcyHS8d0kgn3IMTz2saWSW'
+
+const clemens = () => fetch(`${endpoint}/claims?${apiKey}`).then(toJSON)
 
 const resolvers = {
   Query: {
     partners(_, args) {
-      return Partner.findAll({ where: args });
+      return PartnerConnector.findAll({ where: args });
     },
     contracts(_, args) {
       return Contract.findAll({ where: args, order: [  ['riskObjects', 'DESC'] ] });
@@ -18,6 +26,9 @@ const resolvers = {
     claim(_, args) {
       return Claims.find({ where: args });
     },
+    clemens(_, args) {
+      return clemens;
+    }
   },
   
   Partner: {

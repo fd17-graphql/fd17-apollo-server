@@ -36,6 +36,7 @@ type Query {
   contracts(limit: Int, policeNumber: String, product: String, riskObjects: String, insuranceSum: Int): [Contract]
   claims(limit: Int, claimsNumber: String, description: String, claimsSum: Int, claimsDate: String, state: String): [Claims]
   claim(partnerNumber: String): Claims
+  clemens: [Claims]
 }
 
 
