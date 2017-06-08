@@ -61,7 +61,7 @@ const resolvers = {
           "fk_partnerNumberCauser": claims['fk_partnerNumberCauser']
       }))
     },
-    claimsbyMe(partner) {
+    claimsCausedByMe(partner) {
       var param = '"fk_partnerNumberCauser":'+ partner.partnerNumber;
       console.log(param)
       return ClaimsModelRest.findByParam(param).map(claims => ({
@@ -95,16 +95,22 @@ const resolvers = {
           "fk_partnerNumberCauser": claims['fk_partnerNumberCauser']
       }))
     },
-    partner(contract) {
-      return PartnerModelMongoose.findOne({ 'partnerNumber': contract.fk_partnerNumber }).exec().then((partner) => {
-        console.log(partner)
-        return partner.map(partner => ({
-          "partnerNumber": partner.partnerNumber,
-          "firstname": partner.firstname,
-          "lastname": partner.lastname,
-          "birthday": partner.birthday,
-          "sex": partner.sex
-        }))
+    insuree(contract) {
+      return PartnerModelMongoose.findOne({ 'partnerNumber': contract.fk_partnerNumber }).exec().then((insuree) => {
+        return insuree
+      });
+    },
+  },
+  
+  Claims: {
+    causer(claims) {
+      return PartnerModelMongoose.findOne({ 'partnerNumber': claims.fk_partnerNumberCauser }).exec().then((causer) => {
+        return causer
+      });
+    },
+    insuredPerson(claims) {
+      return PartnerModelMongoose.findOne({ 'partnerNumber': claims.fk_partnerNumberInsuree }).exec().then((insuredPerson) => {
+        return insuredPerson
       });
     },
   }

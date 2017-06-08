@@ -9,7 +9,7 @@ type Partner {
   sex: String!
   contracts: [Contract]
   myClaims: [Claims]
-  claimsbyMe: [Claims]
+  claimsCausedByMe: [Claims]
 }
 
 # Insurance contract
@@ -20,7 +20,7 @@ type Contract {
   insuranceSum: Int!
   fk_partnerNumber: Int
   claims: [Claims]
-  partner: Partner
+  insuree: Partner
 }
 # RiskObjects
 type RiskObject {
@@ -38,13 +38,15 @@ type Claims {
   fk_partnerNumberInsuree: Int
   fk_partnerNumberCauser: Int
   fk_contractNumber: Int
+  causer: Partner
+  insuredPerson: Partner
 }
 
 
 type Query {
   partners(limit: Int, partnerNumber: Int, firstname: String, lastname: String, birthday: String, sex: String): [Partner]
   contracts(limit: Int, policeNumber: Int, product: String, insuranceSum: Int): [Contract]
-  claims(limit: Int,, claimsNumber: Int): [Claims]
+  claims(limit: Int, claimsNumber: Int, description: String, claimsDate: String, state: String): [Claims]
 }
 
 
