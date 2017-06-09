@@ -16,10 +16,9 @@ const ClaimsModelRest = {
         return res;
       });
   },
-  
+
   findByParam: function(arg) {
     var uri = endpoint + '/claims?' + apiKey + '&q={' + arg + '}';
-    console.log(uri);
     return rp(uri)
       .then((res) => JSON.parse(res))
       .then((res) => {
