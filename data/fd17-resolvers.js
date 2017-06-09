@@ -5,12 +5,12 @@ import { ClaimsModelRest } from './fd17-restConnector';
 const resolvers = {
   Query: {
     partners(_, args) {
-      return PartnerModelMongoose.find().exec().then((partner) => {
+      return PartnerModelMongoose.find(args).exec().then((partner) => {
         return (partner)
       });
     },
     contracts(_, args) {
-      return ContractModelMongoose.find().exec().then((contract) => {
+      return ContractModelMongoose.find(args).exec().then((contract) => {
         return contract.map(contract => ({
           "policeNumber": contract['police-number'],
           "product": contract.product,
@@ -84,7 +84,6 @@ const resolvers = {
     },
     claims(contract) {
       var param = '"fk_contractNumber":'+ contract.policeNumber;
-      console.log(param)
       return ClaimsModelRest.findByParam(param).map(claims => ({
           "claimsNumber": claims.claimsNumber,
           "description": claims.description,
@@ -105,6 +104,7 @@ const resolvers = {
   
   Claims: {
     causer(claims) {
+      console.log(claims.fk_partnerNumberCauser)
       return PartnerModelMongoose.findOne({ 'partnerNumber': claims.fk_partnerNumberCauser }).exec().then((causer) => {
         return causer
       });
