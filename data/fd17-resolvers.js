@@ -73,8 +73,29 @@ const resolvers = {
     sex(partner) {
       return partner.sex;
     },
-    contracts(partner) {
-      return ContractModelMongoose.find({ 'fk_partnerNumber': partner.partnerNumber }).exec().then((contract) => {
+    contracts(partner, args) {
+      if (args.policeNumber) {
+        return ContractModelMongoose.find({ 'fk_partnerNumber': partner.partnerNumber, 'police-number': args.policeNumber }).exec().then((contract) => {
+          return contract.map(contract => ({
+            "policeNumber": contract['police-number'],
+            "product": contract.product,
+            "riskObjects": contract['risk-objects'],
+            "insuranceSum": contract['insurance-sum'],
+            "fk_partnerNumber": contract.fk_partnerNumber
+          }))
+        });
+      } else {
+        return ContractModelMongoose.find({ 'fk_partnerNumber': partner.partnerNumber }).exec().then((contract) => {
+          return contract.map(contract => ({
+            "policeNumber": contract['police-number'],
+            "product": contract.product,
+            "riskObjects": contract['risk-objects'],
+            "insuranceSum": contract['insurance-sum'],
+            "fk_partnerNumber": contract.fk_partnerNumber
+          }))
+        });
+      }
+      return ContractModelMongoose.find({ 'fk_partnerNumber': partner.partnerNumber, 'police-number': args.policeNumber }).exec().then((contract) => {
         return contract.map(contract => ({
           "policeNumber": contract['police-number'],
           "product": contract.product,

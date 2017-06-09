@@ -7,7 +7,7 @@ type Partner {
   lastname: String!
   birthday: String!
   sex: Sex!
-  contracts: [Contract]
+  contracts(policeNumber: Int): [Contract]
   myClaims: [Claims]
   claimsCausedByMe: [Claims]
 }
