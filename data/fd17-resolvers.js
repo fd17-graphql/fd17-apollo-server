@@ -5,7 +5,12 @@ import { ClaimsModelRest } from './fd17-restConnector';
 const resolvers = {
   Query: {
     partners(_, args) {
-      return PartnerModelMongoose.find(args).exec().then((partner) => {
+      var limit = 0;
+      if (args.limit) {
+        limit = args.limit;
+        delete args["limit"];
+      }
+      return PartnerModelMongoose.find(args).limit(limit).exec().then((partner) => {
         return (partner)
       });
     },
@@ -21,7 +26,6 @@ const resolvers = {
         limit = argsNew.limit;
         delete argsNew["limit"];
       }
-      console.log(argsNew)
       return ContractModelMongoose.find(argsNew).limit(limit).exec().then((contract) => {
         return contract.map(contract => ({
           "policeNumber": contract['police-number'],
