@@ -18,7 +18,6 @@ type Contract {
   product: String!
   riskObjects: [RiskObject]
   insuranceSum: Int!
-  fk_partnerNumber: Int
   claims: [Claims]
   insuree: Partner
 }
@@ -35,9 +34,6 @@ type Claims {
   claimsSum: Int!
   claimsDate: String!
   state: String!
-  fk_partnerNumberInsuree: Int
-  fk_partnerNumberCauser: Int
-  fk_contractNumber: Int
   causer: Partner
   insuredPerson: Partner
 }
