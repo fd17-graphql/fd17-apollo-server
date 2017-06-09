@@ -49,6 +49,13 @@ const resolvers = {
           "fk_partnerNumberCauser": claims['fk_partnerNumberCauser']
         }))
       });
+    },
+    partnerWithClaimGreaterThan(_, args) {
+      return ClaimsModelRest.findByClaimsSumGreater(args['value']).then((claims) => {
+        var pn= claims.map(claim => claim.fk_partnerNumberInsuree);
+        var guments= {partnerNumber : { $in: pn}}
+        return PartnerModelMongoose.find(guments);
+      })
     }
   },
 
@@ -66,7 +73,6 @@ const resolvers = {
     },
     myClaims(partner) {
       var param = '"fk_partnerNumberInsuree":'+ partner.partnerNumber;
-      console.log(param)
       return ClaimsModelRest.findByParam(param).map(claims => ({
           "claimsNumber": claims.claimsNumber,
           "description": claims.description,
@@ -80,7 +86,6 @@ const resolvers = {
     },
     claimsCausedByMe(partner) {
       var param = '"fk_partnerNumberCauser":'+ partner.partnerNumber;
-      console.log(param)
       return ClaimsModelRest.findByParam(param).map(claims => ({
           "claimsNumber": claims.claimsNumber,
           "description": claims.description,

@@ -36,7 +36,6 @@ const ClaimsModelRest = {
     if (limit > 0) {
       query += '&l=' + limit;
     }
-    console.log(query)
     return rp(endpoint + '/claims?' + apiKey + query)
       .then((res) => JSON.parse(res))
       .then((res) => {
@@ -46,6 +45,16 @@ const ClaimsModelRest = {
 
   findByParam: function(arg) {
     var uri = endpoint + '/claims?' + apiKey + '&q={' + arg + '}';
+    return rp(uri)
+      .then((res) => JSON.parse(res))
+      .then((res) => {
+        return res;
+      });
+  },
+
+  findByClaimsSumGreater: function(arg) {
+    var query= 'claimsSum: { $gt: ' + arg + '}'
+    var uri = endpoint + '/claims?' + apiKey + '&q={' + query + '}';
     return rp(uri)
       .then((res) => JSON.parse(res))
       .then((res) => {
