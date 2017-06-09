@@ -36,6 +36,7 @@ type Claims {
   state: String!
   causer: Partner
   insuredPerson: Partner
+  contract: Contract
 }
 
 

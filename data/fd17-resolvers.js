@@ -109,7 +109,6 @@ const resolvers = {
 
   Claims: {
     causer(claims) {
-      console.log(claims.fk_partnerNumberCauser)
       return PartnerModelMongoose.findOne({ 'partnerNumber': claims.fk_partnerNumberCauser }).exec().then((causer) => {
         return causer
       });
@@ -119,6 +118,18 @@ const resolvers = {
         return insuredPerson
       });
     },
+    contract(claims) {
+      return ContractModelMongoose.findOne({ 'police-number': claims.fk_contractNumber }).exec().then((contract) => {
+        var result = {};
+        result.policeNumber = contract['police-number'];
+        result.product = contract.product,
+        result.riskObjects = contract['risk-objects'],
+        result.insuranceSum = contract['insurance-sum'],
+        result.fk_partnerNumber = contract.fk_partnerNumber
+        console.log(result)
+        return result
+      });
+    }
   }
 };
 
