@@ -6,7 +6,8 @@ const resolvers = {
   Query: {
     partners(_, args) {
       var limit = 0;
-      var sortBy = "";
+      var sortBy = "lastname";
+      var sortDesc= "";
       if (args.limit) {
         limit = args.limit;
         delete args["limit"];
