@@ -31,9 +31,9 @@
   "homepage": "https://github.com/apollostack/apollo-starter-kit#readme",
   "dependencies": {
     "babel-preset-stage-2": "^6.24.1",
+    "cors": "^2.8.3",
     "express": "4.13.4",
     "graphql-tools": "^0.4.2",
-    "cors": "2.8.3",
     "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
