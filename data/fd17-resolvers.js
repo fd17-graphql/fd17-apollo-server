@@ -53,6 +53,9 @@ const resolvers = {
   },
 
   Partner: {
+    sex(partner) {
+      return partner.sex;
+    },
     contracts(partner) {
       return ContractModelMongoose.find({ 'fk_partnerNumber': partner.partnerNumber }).exec().then((contract) => {
         return contract.map(contract => ({
@@ -119,6 +122,9 @@ const resolvers = {
   },
 
   Claims: {
+    state(claims) {
+      return claims.state;
+    },
     causer(claims) {
       return PartnerModelMongoose.findOne({ 'partnerNumber': claims.fk_partnerNumberCauser }).exec().then((causer) => {
         return causer

@@ -6,7 +6,7 @@ type Partner {
   firstname: String!
   lastname: String!
   birthday: String!
-  sex: String!
+  sex: Sex!
   contracts: [Contract]
   myClaims: [Claims]
   claimsCausedByMe: [Claims]
@@ -33,12 +33,22 @@ type Claims {
   description: String
   claimsSum: Int!
   claimsDate: String!
-  state: String!
+  state: ContractState!
   causer: Partner
   insuredPerson: Partner
   contract: Contract
 }
 
+enum Sex {
+  Male
+  Female
+}
+
+enum ContractState {
+  clearing
+  closed
+  reported
+}
 
 type Query {
   partners(limit: Int, partnerNumber: Int, firstname: String, lastname: String, birthday: String, sex: String): [Partner]
