@@ -15,7 +15,14 @@ const resolvers = {
       });
     },
     contracts(_, args) {
-      return ContractModelMongoose.find(args).exec().then((contract) => {
+      var argsNew = mapContractsArgs(args);
+      var limit = 0;
+      if (argsNew.limit) {
+        limit = argsNew.limit;
+        delete argsNew["limit"];
+      }
+      console.log(argsNew)
+      return ContractModelMongoose.find(argsNew).limit(limit).exec().then((contract) => {
         return contract.map(contract => ({
           "policeNumber": contract['police-number'],
           "product": contract.product,
@@ -126,7 +133,6 @@ const resolvers = {
         result.riskObjects = contract['risk-objects'],
         result.insuranceSum = contract['insurance-sum'],
         result.fk_partnerNumber = contract.fk_partnerNumber
-        console.log(result)
         return result
       });
     }
@@ -135,3 +141,18 @@ const resolvers = {
 
 
 export default resolvers;
+
+function mapContractsArgs(args) {
+  var argsNew = args;
+  for (var key in args) {
+    if (key === 'policeNumber') {
+      argsNew['police-number'] = args[key];
+      delete argsNew[key];
+    }
+    if (key === 'insuranceSum') {
+      argsNew['insurance-sum'] = args[key];
+      delete argsNew[key];
+    }
+  }
+  return argsNew;
+}
