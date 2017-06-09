@@ -21,7 +21,7 @@ const resolvers = {
       });
     },
     claims(_, args) {
-      return ClaimsModelRest.findAll().then((claims) => {
+      return ClaimsModelRest.findAll(args).then((claims) => {
         return claims.map(claims => ({
           claimsNumber: claims.claimsNumber,
           description: claims.description,

@@ -5,8 +5,12 @@ const apiKey = 'apiKey=8CQLKPe7aPqcyHS8d0kgn3IMTz2saWSW'
 
 const ClaimsModelRest = {
 
-  findAll: function() {
-    return rp(endpoint + '/claims?' + apiKey)
+  findAll: function(args) {
+    var guments= '';
+    if (args) {
+      guments= '&q=' + JSON.stringify(args);
+    }
+    return rp(endpoint + '/claims?' + apiKey + guments)
       .then((res) => JSON.parse(res))
       .then((res) => {
         return res;
