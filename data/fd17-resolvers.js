@@ -6,11 +6,18 @@ const resolvers = {
   Query: {
     partners(_, args) {
       var limit = 0;
+      var sortBy = "";
       if (args.limit) {
         limit = args.limit;
         delete args["limit"];
       }
-      return PartnerModelMongoose.find(args).limit(limit).exec().then((partner) => {
+      if (args.sortBy) {
+        console.log("sortBy found");
+        sortBy = args.sortBy;
+        delete args["sortBy"];
+        console.log(sortBy);
+      }
+      return PartnerModelMongoose.find(args).limit(limit).sort([[sortBy, 'ascending']]).exec().then((partner) => {
         return (partner)
       });
     },
