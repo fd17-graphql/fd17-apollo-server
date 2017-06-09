@@ -7,18 +7,20 @@ const resolvers = {
     partners(_, args) {
       var limit = 0;
       var sortBy = "lastname";
-      var sortDesc= "";
+      var sortDesc = "ascending";
       if (args.limit) {
         limit = args.limit;
         delete args["limit"];
       }
       if (args.sortBy) {
-        console.log("sortBy found");
         sortBy = args.sortBy;
         delete args["sortBy"];
-        console.log(sortBy);
       }
-      return PartnerModelMongoose.find(args).limit(limit).sort([[sortBy, 'ascending']]).exec().then((partner) => {
+      if (args.sortDesc) {
+        sortDesc = "descending";
+        delete args["sortDesc"];
+      }
+      return PartnerModelMongoose.find(args).limit(limit).sort([[sortBy, sortDesc]]).exec().then((partner) => {
         return (partner)
       });
     },
