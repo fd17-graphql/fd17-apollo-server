@@ -6,11 +6,18 @@ const resolvers = {
   Query: {
     partners(_, args) {
       var limit = 0;
+      var sortBy = "";
       if (args.limit) {
         limit = args.limit;
         delete args["limit"];
       }
-      return PartnerModelMongoose.find(args).limit(limit).exec().then((partner) => {
+      if (args.sortBy) {
+        console.log("sortBy found");
+        sortBy = args.sortBy;
+        delete args["sortBy"];
+        console.log(sortBy);
+      }
+      return PartnerModelMongoose.find(args).limit(limit).sort([[sortBy, 'ascending']]).exec().then((partner) => {
         return (partner)
       });
     },
@@ -60,6 +67,9 @@ const resolvers = {
   },
 
   Partner: {
+    sex(partner) {
+      return partner.sex;
+    },
     contracts(partner) {
       return ContractModelMongoose.find({ 'fk_partnerNumber': partner.partnerNumber }).exec().then((contract) => {
         return contract.map(contract => ({
@@ -124,6 +134,9 @@ const resolvers = {
   },
 
   Claims: {
+    state(claims) {
+      return claims.state;
+    },
     causer(claims) {
       return PartnerModelMongoose.findOne({ 'partnerNumber': claims.fk_partnerNumberCauser }).exec().then((causer) => {
         return causer
