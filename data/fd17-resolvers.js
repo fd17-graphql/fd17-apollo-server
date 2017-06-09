@@ -9,6 +9,11 @@ const resolvers = {
         return (partner)
       });
     },
+    partner(_, args) {
+      return PartnerModelMongoose.findOne(args).exec().then((partner) => {
+        return (partner)
+      });
+    },
     contracts(_, args) {
       return ContractModelMongoose.find(args).exec().then((contract) => {
         return contract.map(contract => ({
