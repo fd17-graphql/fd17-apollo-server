@@ -42,7 +42,7 @@ type Claims {
 type Query {
   partners(limit: Int, partnerNumber: Int, firstname: String, lastname: String, birthday: String, sex: String): [Partner]
   contracts(limit: Int, policeNumber: Int, product: String, insuranceSum: Int): [Contract]
-  claims(limit: Int, claimsNumber: Int, description: String, claimsDate: String, state: String): [Claims]
+  claims(limit: Int, claimsNumber: Int, description: String, claimsDate: String, state: String, claimsSum: Int): [Claims]
 }
 
 

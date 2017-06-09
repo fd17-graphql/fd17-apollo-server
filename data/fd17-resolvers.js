@@ -101,7 +101,7 @@ const resolvers = {
       });
     },
   },
-  
+
   Claims: {
     causer(claims) {
       console.log(claims.fk_partnerNumberCauser)
