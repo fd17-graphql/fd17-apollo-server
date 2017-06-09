@@ -7,10 +7,31 @@ const ClaimsModelRest = {
 
   findAll: function(args) {
     var guments= '';
+    var limit= '';
     if (args) {
-      guments= '&q=' + JSON.stringify(args);
+      var hasOwn= false
+      for (var key in args) {
+        if (key === 'limit') {
+          limit= args[key];
+        } else if (args.hasOwnProperty(key)) {
+          hasOwn= true
+          if (guments.length > 0) {
+            guments += ', '
+          }
+          guments += key + ':' + args[key]
+        }
+      }
+      if (hasOwn) {
+        guments= '&q={' + guments + '}';
+      }
     }
-    return rp(endpoint + '/claims?' + apiKey + guments)
+    
+    var query= guments;
+    if (limit > 0) {
+      query += '&l=' + limit;
+    }
+    console.log(query)
+    return rp(endpoint + '/claims?' + apiKey + query)
       .then((res) => JSON.parse(res))
       .then((res) => {
         return res;
