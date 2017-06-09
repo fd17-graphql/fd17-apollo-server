@@ -18,7 +18,13 @@ const ClaimsModelRest = {
           if (guments.length > 0) {
             guments += ', '
           }
-          guments += key + ':' + args[key]
+          if (typeof args[key] === "number") {
+            guments += key + ':' + args[key] 
+          } else if (args[key].includes('*')){
+            guments += key + ": { $regex: '"+args[key].split('*').join('')+"', $options: 'i'}"
+          } else {
+            guments += key + ': "' + args[key] + '"'
+          }
         }
       }
       if (hasOwn) {
