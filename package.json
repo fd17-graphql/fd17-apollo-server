@@ -57,7 +57,8 @@
     "sequelize": ">=5.3.0"
     "sqlite": "^2.8.0",
     "sqlite3": "^3.1.8",
-    "sshpk": ">=1.13.2"
+    "sshpk": ">=1.13.2",
+    "js-yaml": ">=3.13.1"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
